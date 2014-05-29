@@ -47,3 +47,5 @@ libraries/Arduino/
 
 # TropicSSL libraries
 libraries/Tropicssl/
+
+src/application.cpp
