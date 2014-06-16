@@ -6,10 +6,13 @@ cd `dirname $tools_path`
 cd ../..
 
 cd core-firmware
+git checkout master
 git pull
 cd ../core-common-lib
+git checkout master
 git pull
 cd ../core-communication-lib
+git checkout master
 git pull
 cd ..
 
