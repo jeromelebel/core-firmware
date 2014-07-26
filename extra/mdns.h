@@ -48,7 +48,7 @@ License (MIT license):
 
 class MDNSResponder {
 public:
-  bool begin(const char* domain, uint32_t ip, uint32_t ttlSeconds = 3600);
+  bool begin(const char* domain, IPAddress ipAddress = INADDR_NONE, uint32_t ttlSeconds = 3600);
   void update();
 
 private:
