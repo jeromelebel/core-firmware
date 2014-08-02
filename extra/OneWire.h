@@ -28,9 +28,6 @@
 #define ONEWIRE_CRC16 1
 #endif
 
-#define FALSE 0
-#define TRUE  1
-
 class OneWire
 {
   private:
