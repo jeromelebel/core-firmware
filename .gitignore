@@ -49,3 +49,5 @@ libraries/Arduino/
 libraries/Tropicssl/
 
 src/application.cpp
+ci/test-reports/
+unit/obj/
