@@ -60,7 +60,7 @@ bool MDNSResponder::begin(const char* domain, IPAddress ipAddress, uint32_t ttlS
     return false;
   }
   if (ipAddress == INADDR_NONE) {
-    ipAddress = Network.localIP();
+    ipAddress = WiFi.localIP();
   }
   _queryFQDNLen = 8 + n;
   if (_queryFQDN != NULL) {
@@ -72,7 +72,7 @@ bool MDNSResponder::begin(const char* domain, IPAddress ipAddress, uint32_t ttlS
   }
   _queryFQDN[0] = (uint8_t)n;
   // Copy in domain characters as lowercase
-  for (int i = 0; i < n; ++i) {
+  for (size_t i = 0; i < n; ++i) {
     _queryFQDN[1+i] = tolower(domain[i]);
   }
   // Values for 5 (length), "local":
@@ -146,7 +146,6 @@ bool MDNSResponder::begin(const char* domain, IPAddress ipAddress, uint32_t ttlS
     address.sin_family = AF_INET;
     address.sin_port = htons(5353);
     address.sin_addr.s_addr = htonl(ip2int(224, 0, 0, 251));
-    socklen_t len = sizeof(address);
     if (bind(soc, (sockaddr*) &address, sizeof(address)) < 0) {
       return false;
     }
